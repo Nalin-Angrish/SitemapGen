@@ -1,3 +1,6 @@
+"""
+A python file that contains some helper methods for the working of the library/tool.
+"""
 from datetime import date
 
 
@@ -21,6 +24,14 @@ timestamp = date.today()
 
 
 def filter(array):
+	"""A function to remove the duplicates in a list so that no URL is repeated in the sitemap.
+	This function also checks if the links are on the same domain or not and if they are linked to an external website, then the URL is removed.
+	Args:
+		**array** (list): The list to filter
+
+	Returns:
+		**list**: a filtered list
+	"""
 	links = list(dict.fromkeys(array))
 	finalLinks = []
 	for link in links:
@@ -35,6 +46,11 @@ def filter(array):
 
 
 def displayHelpMessage(VERSION):
+	"""A function to display a help message to the user
+	
+	Args:
+		**VERSION** (str): The version of the library.
+	"""
 	print(f"""SitemapGen {VERSION} - By Nalin Angrish.
 A general utility script for generating site XML sitemaps.
 
@@ -51,6 +67,19 @@ Also, running the command with --version or --help will lead to the suppression 
 
 
 def prepare(link:str):
+	"""A function to check if the link is complete (it includes the protocol) 
+	and that it can be used by the library (it should not end with a slash)
+
+
+	Args:
+		**link (str)**: The link to check/prepare
+
+	Raises:
+		**Exception**: Thrown if the protocol is not present in the URL 
+
+	Returns:
+		**str**: prepared link
+	"""
 	if(link.endswith("/")):
 		link = link[:-1]
 	if("http" not in link):

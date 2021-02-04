@@ -9,7 +9,7 @@ with open("requirements.txt", "r") as fh:
 
 setuptools.setup(
     name="sitemapgen",
-    version="0.9.1",
+    version="0.9.2",
     author="Nalin Angrish",
     author_email="nalin@nalinangrish.me",
     description="A package to generate Sitemaps from a URL. Also provides a CLI for non programmatical use.",
