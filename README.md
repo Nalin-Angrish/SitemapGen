@@ -13,7 +13,7 @@
 ## Usage
 ### CLI
 1. After you have installed the library, fire up a Terminal/Command Prompt and type ```sitemapgen --help```. This command will show you the description of the library and the available options for using the command.   
-<code>
+```
 SitemapGen v0.9.1 - By Nalin Angrish.
 A general utility script for generating site XML sitemaps.  
 
@@ -27,7 +27,7 @@ Options:
   
 When Running the command, you need to specify the '--url' and the '--out' parameters while the '--disguise' parameter is optional.   
 Also, running the command with --version or --help will lead to the suppression of other parameters.  
-</code>
+```
 2. To know the version of the tool, run ```sitemapgen --version```   
 ```
 SitemapGen v0.9.1 - By Nalin Angrish.
@@ -59,4 +59,4 @@ sitemap = generator.genSitemap()   # Generate a String sitemap from the URLs dis
 generator.write()      # Write to the output file specified. No return value.
  ```  
   
- To read the code documentation, go [here](http://nalin-2005.github.io/SitemapGen/docs)
+ To read the code documentation, go [here](http://nalin-2005.github.io/SitemapGen/)
