@@ -22,29 +22,6 @@ timestamp = date.today()
 
 
 
-
-def filter(array):
-	"""A function to remove the duplicates in a list so that no URL is repeated in the sitemap.
-	This function also checks if the links are on the same domain or not and if they are linked to an external website, then the URL is removed.
-	Args:
-		**array** (list): The list to filter
-
-	Returns:
-		**list**: a filtered list
-	"""
-	links = list(dict.fromkeys(array))
-	finalLinks = []
-	for link in links:
-		if((not str(link).startswith("http")) and (not ":" in str(link)) and (not str(link).startswith("#"))):
-			if(link.startswith("/")):
-				finalLinks.append(link)
-			else:
-				finalLinks.append("/"+link)
-	return finalLinks
-
-
-
-
 def displayHelpMessage(VERSION):
 	"""A function to display a help message to the user
 	
@@ -88,4 +65,27 @@ def prepare(link:str):
 
 
 
+def rectify(link:str, parent:str, path:str):
+	"""A function to check a link and verify that it should be captured or not.
+	For e.g. any external URL would be blocked. It would also take care that all the urls are properly formatted.
 
+	Args:
+		**link (str)**: the link to rectify.
+		**parent (str)**: the complete url of the page from which the link was found.
+		**path (str)**: the path (after the domain) of the page from which the link was found.
+
+	Returns:
+		**str**: the properly formatted link.
+	"""
+	if (link.startswith("#")) or (":" in link) or ("../" in link):
+		return path
+	if not link.startswith("/"):
+		if parent.endswith("/"):
+			if not path.endswith("/"):
+				path += "/"
+			return path + link
+		else:
+			path = "/".join(path.split("/")[:-1])+"/"
+			return path + link
+
+	return link

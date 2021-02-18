@@ -3,15 +3,6 @@
 ## sitemapgen/helper.py
 A python file that contains some helper methods for the working of the library/tool. 
 
-#### `method` filter
->A function to remove the duplicates in a list so that no URL is repeated in the sitemap.
->	This function also checks if the links are on the same domain or not and if they are linked to an external website, then the URL is removed.  
->
-> Args:
-> - **array** (list): The list to filter
->
-> Returns:
-> - **list**: a filtered list
 
 #### `method` displayHelpMessage
 > A function to display a help message to the user.
@@ -31,3 +22,15 @@ A python file that contains some helper methods for the working of the library/t
 >
 > Returns:
 > - **str**: prepared link
+
+#### `method` rectify
+> A function to check a link and verify that it should be captured or not. For e.g. any external URL would be blocked. It would also take care that all the urls are properly formatted.
+>
+>
+> Args:
+> - **link (str)**: the link to rectify.
+> -	**parent (str)**: the complete url of the page from which the link was found.
+> -	**path (str)**: the path (after the domain) of the page from which the link was found.
+>
+>Returns:
+> -	**str**: the properly formatted link.

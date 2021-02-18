@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from .helper import *
 
 
-VERSION = "v0.9.2"
+VERSION = "v0.9.5"
 AUTHOR = "Nalin Angrish"
 SOURCE = "https://github.com/Nalin-2005/SitemapGen"
 AUTHOR_WEBSITE = "https://www.nalinangrish.me"
@@ -58,13 +58,17 @@ class Generator():
 			**list**: All links that could be extracted from the webpage.
 		"""
 		url = self.site + path
-		page = get(url).text
+		response = get(url)
+		page = response.text
 		soup = BeautifulSoup(page, features="html.parser")
 		linktags = soup.findAll("a")
 		links = []
 		for linktag in linktags:
-			links.append(linktag["href"])
-		return filter(links)
+			try:
+				links.append(rectify(linktag["href"], response.url, path))
+			except:
+				pass
+		return list(dict.fromkeys(links))
 
 	def discover(self) -> list:
 		"""A function to discover all the hyperlinks and the pages available on the domain.
