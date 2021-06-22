@@ -2,7 +2,7 @@
 
 
 #### sitemapgen/\_\_init__.py
-The main importng entry point for the library. [Visit File Documentation](sitemapgen/init.md)
+The main importing entry point for the library. [Visit File Documentation](sitemapgen/init.md)
 #### sitemapgen/cli.py
 The file containing the main CLI code. [Visit File Documentation](sitemapgen/cli.md)
 #### sitemapgen/helper.py

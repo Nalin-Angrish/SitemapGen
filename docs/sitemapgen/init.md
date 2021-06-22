@@ -1,7 +1,7 @@
 # SitemapGen - Code Documentation
 
 ## sitemapgen/\_\_init__.py
-The main importng entry point for the library.   
+The main importing entry point for the library.   
 
 
 

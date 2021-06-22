@@ -1,13 +1,14 @@
 """
-The main importng entry point for the library 
+The main importing entry point for the library 
 """
 
-from requests import get
+import cloudscraper
+get = cloudscraper.create_scraper().get
 from bs4 import BeautifulSoup
 from .helper import *
 
 
-VERSION = "v0.9.5"
+VERSION = "v0.9.6"
 AUTHOR = "Nalin Angrish"
 SOURCE = "https://github.com/Nalin-2005/SitemapGen"
 AUTHOR_WEBSITE = "https://www.nalinangrish.me"
@@ -26,7 +27,7 @@ class Generator():
 			**output** (str): The path of the output sitemap file.
 			**disguise** (str, optional): To set a disguise the sitemap's URL, which is best suited to generate sitemap of a localhost website which needs to be deployed. Defaults to None.
 		"""
-		self.site = site
+		self.site = prepare(site)
 		if(disguise!=None):
 			self.disguise = disguise
 		else:
