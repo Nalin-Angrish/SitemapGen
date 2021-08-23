@@ -4,3 +4,4 @@ upload.cmd
 test.py
 sitemapgen.egg-info
 sitemap.xml
+dist
