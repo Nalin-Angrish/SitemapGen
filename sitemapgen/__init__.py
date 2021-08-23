@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from .helper import *
 
 
-VERSION = "v0.9.6"
+VERSION = "v0.9.7"
 AUTHOR = "Nalin Angrish"
 SOURCE = "https://github.com/Nalin-2005/SitemapGen"
 AUTHOR_WEBSITE = "https://www.nalinangrish.me"
