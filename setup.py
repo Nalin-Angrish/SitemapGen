@@ -9,13 +9,13 @@ with open("requirements.txt", "r") as f:
 
 setuptools.setup(
     name="sitemapgen",
-    version="0.9.8",
+    version="0.9.9",
     author="Nalin Angrish",
     author_email="nalin@nalinangrish.me",
     description="A package to generate Sitemaps from a URL. Also provides a CLI for non programmatical use.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Nalin-2005/SitemapGen",
+    url="https://www.nalinangrish.me/apps/sitemapgen",
     entry_points='''
         [console_scripts]
         sitemapgen=sitemapgen.cli:run
